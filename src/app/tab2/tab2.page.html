@@ -1,0 +1,53 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+  <ion-row>
+    <ion-col>
+      <ion-label>
+        {{ city }}
+        <p>{{ country }}</p>
+      </ion-label>
+    </ion-col>
+    <ion-col class="ion-text-end">
+      <ion-label>
+        {{ getCurrentDayName() }}
+        <p>{{ description }}</p>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-text-center">
+    <ion-col size="12">
+      <img [src]="'https://openweathermap.org/img/wn/'
+      +icon
+      +'@4x.png'" class="bigIcon" />    </ion-col>
+    <ion-col size="12">
+      <ion-label class="hugeDeg">{{ temp.toFixed(0) }}&deg;</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-label>{{ windSpeed }} km/h </ion-label>
+      <ion-icon [style.transform]="'rotate('+windDeg+'deg)'" name="arrow-back"></ion-icon>
+    </ion-col>
+    <ion-col>
+      <ion-label>{{ humidity }}% </ion-label>
+      <ion-icon name="thermometer"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-list>
+    <ion-list-header>
+      <ion-label><h1><strong>5 Günlük Hava Tahminleri</strong></h1></ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let forecast of forecasts">
+      <ion-label>{{ forecast.dt_txt | date:'dd.MM' }}</ion-label>
+      <ion-label>
+        {{ forecast.wind.speed }}km/h
+        <ion-icon [style.transform]="'rotate('+forecast.wind.speed+'deg)'" name="arrow-back"></ion-icon>
+      </ion-label>
+      <ion-label>{{ forecast.main.temp | number: '1.0-0' }} &deg;</ion-label>
+      <img [src]="'https://openweathermap.org/img/wn/'
+      +forecast.weather[0].icon
+      +'@4x.png'" style="width: 50px;" />   
+    </ion-item>
+    
+  </ion-list>
+
+</ion-content>

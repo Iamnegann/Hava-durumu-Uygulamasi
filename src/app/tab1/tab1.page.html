@@ -1,0 +1,43 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+  <ion-searchbar
+  [(ngModel)]="cityName"
+  (ionInput) = 'search()'
+   placeholder="Şehir veya İlçe Giriniz"
+   ></ion-searchbar>
+   <div *ngIf="weatherData">
+    <ion-row >
+      <ion-col>
+        <ion-label>
+          <h1>{{ weatherData.name }} / {{ weatherData.sys.country }}</h1> 
+        </ion-label>
+      </ion-col>
+      <ion-col class="ion-text-end">
+        <ion-icon style="font-size: 30px;" 
+        [color]="isLiked?'danger':'medium'" 
+        [name]="isLiked?'heart':'heart-outline'"
+        (click)="toggleLike()"></ion-icon>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row class="ion-text-center">   
+      <ion-col size="12">
+        <img [src]="'https://openweathermap.org/img/wn/'
+        +weatherData.weather[0].icon
+        +'@4x.png'" class="bigIcon" />
+      </ion-col>
+      <ion-col size="12">
+        <ion-label class="hugeDeg">{{ weatherData.main.temp | number : "1.0-0" }}&deg;</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-text-center">
+      <ion-col>
+        <ion-label>{{ weatherData.wind.speed }} km/h </ion-label>
+        <ion-icon [style.transform]="'rotate('+weatherData.wind.deg+'deg)'" name="arrow-back"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-label>{{ weatherData.main.humidity }}% </ion-label>
+        <ion-icon name="thermometer"></ion-icon>
+      </ion-col>
+    </ion-row>
+</div>
+</ion-content>

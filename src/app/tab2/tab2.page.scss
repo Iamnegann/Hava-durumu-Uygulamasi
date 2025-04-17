@@ -1,0 +1,19 @@
+ion-content{
+    --ion-background-color	: rgb(237,201,250);
+    --ion-background-color	: linear-gradient(90deg, rgba(237,201,250,0.5298494397759104) 48%, rgba(148,187,233,1) 100%);
+}
+ion-list {
+    --ion-background-color	: transparent;
+}
+.hugeIcon{
+    font-size: 175px;
+    margin-top: 50px;
+}
+.sunny{ color: yellow;}
+.cloud { color: lightcyan}
+.rainy{ color: aqua; }
+.storm { color: goldenrod}
+.psunny{ color: grey;}
+.hugeDeg{ font-size: 70px;font-weight: bold;}
+ion-label{font-size: 20px;}
+ion-icon {font-size: 20px;}
