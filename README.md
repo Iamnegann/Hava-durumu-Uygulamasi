@@ -1,2 +1,2 @@
-# Hava-durumu-Uygulamas-
+# Hava-durumu-Uygulamasi
 Proje Angular İonic İle Yapılmıştır .
