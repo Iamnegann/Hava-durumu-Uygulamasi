@@ -11,3 +11,5 @@ Anasayfada cihazın anlık konumunu GPS ile alıp bulunduğumuz yerin hava durum
 Arama kısmında istenilen yerin hava durum bilgileri gelmektedir 
 
 Favoriler kısmında favorilediğimiz Şehirlerin hava durumu bilgileri gözükmektedir
+
+Uygulama linki = https://havaadrr.netlify.app/
